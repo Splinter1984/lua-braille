@@ -3,10 +3,17 @@ package.path = pngLua_folder .. "?.lua;" .. package.path
 
 require 'pngLua.png'
 
+--- convert pixel data into grayscale mode
+--@params `pixel` struct with RGBA values
+--@return value of grayscale
 function toGrayscale(pixel)
 	return (pixel.R + pixel.G + pixel.B) / 3
 end
 
+--- build braille char from braile_info table
+--@params `braile_info` table with 1 value on pixel 
+--	which grayscale value was more than treshold
+--@return unicode character of braille symbol
 function pixelToBrailleChar(braille_info)
 	local shift_values = {0, 1, 2, 6,
 			      3, 4, 5, 7}
@@ -20,6 +27,9 @@ function pixelToBrailleChar(braille_info)
 	return utf8.char(0x2800 + codepoint_offset)
 end
 
+--- create table with unicode characters from image data
+--@params `canvas` pixels img table
+--@return table with braille characters in string
 function canvasToTable(canvas)
 	local width = canvas.width
 	local height = canvas.height
