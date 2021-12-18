@@ -1,0 +1,5 @@
+repositories:
+ pngLua:
+  type: git
+  url: https://github.com/DelusionalLogic/pngLua
+  version: master
