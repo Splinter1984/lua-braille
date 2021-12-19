@@ -1,0 +1,3 @@
+[submodule "pngLua"]
+	path = pngLua
+	url = https://github.com/DelusionalLogic/pngLua
