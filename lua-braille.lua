@@ -23,7 +23,7 @@ else
 	local img = pngImage(img_path)
 
 	local pr = Params:init()
-	-- init default params
+
 	pr:set_compression(compression_val and tonumber(compression_val) or 0.0)
 	pr:set_grayscale(grayscale_mode and tonumber(grayscale_mode) or 3)
 
