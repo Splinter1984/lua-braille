@@ -1,5 +1,6 @@
 # lua-braille
-
+![](https://img.shields.io/badge/lua-v5.3-blue)
+![](https://img.shields.io/badge/made%20by-splinter1984-blue)	
 ### First step
 clone repo
 ```bash
