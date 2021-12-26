@@ -26,7 +26,7 @@ end
 --@return unicode character of braille symbol
 function pixelToBrailleChar(braille_info)
 	local shift_values = {0, 1, 2, 6,
-						3, 4, 5, 7}
+			      3, 4, 5, 7}
 	local codepoint_offset = 0
 	for key, val in pairs(braille_info) do
 		codepoint_offset = codepoint_offset + (val << shift_values[key])
@@ -46,16 +46,16 @@ function canvasToTable(canvas, params)
 	local result = {}
 	local img_x, img_y = 1, 1
 	local scale_coef = math.floor(1 / (1 - params.settings.compression))
-	while img_y+3 < height do
+	while img_y+4*scale_coef < height do
 		local str = ""
-		while img_x+1 < width do
+		while img_x+2*scale_coef < width do
 			local braille_info = {0, 0, 0, 0,
 					      0, 0, 0, 0}
 			local dot_index = 1
 			for x = 0, 1 do
 				for y = 0, 3 do
-					local pixel = canvas:getPixel(img_x + x,
-								      img_y + y)
+					local pixel = canvas:getPixel(img_x + x*scale_coef,
+								      img_y + y*scale_coef)
 					if pixel.A >= 128 then
 						local greyscale = toGrayscale(pixel, params.grayscale_modes[params.settings.grayscale])
 						if greyscale >= 128 then braille_info[dot_index] = 1 end

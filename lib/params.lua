@@ -41,7 +41,7 @@ end
 
 function Params:set_grayscale(grayscale)
 	local value = 'average'
-	if grayscale <= 1 or grayscale >= 4 then error_msg("invalid value", 'grayscale')
+	if grayscale <= 0 or grayscale >= 5 then error_msg("invalid value", 'grayscale')
 	else value = self.grayscale_modes[grayscale]
 	end
 	self.settings.grayscale = grayscale
