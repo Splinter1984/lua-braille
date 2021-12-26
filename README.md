@@ -1,18 +1,15 @@
 # lua-braille
-
+![](https://img.shields.io/badge/lua-v5.3-blue)
+![](https://img.shields.io/badge/made%20by-splinter1984-blue)	
 ### First step
 clone repo
 ```bash
 git clone git@github.com:Splinter1984/lua-braille.git
 cd lua-braille/
 ```
-install ```vsctools```
+clone submodule
 ```bash
-sudo apt install python3-vcstool
-```
-clone dependent repositories into the project with vcs
-```bash
-vcs import . < lua-braille.repos
+git submodule init && git submodule update
 ```
 ### Run script
 you can provide pic in .png format as argument
