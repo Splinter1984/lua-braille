@@ -17,10 +17,10 @@ script can be run with some options
 lua lua-braille.lua ?
 script help to convert *.png image into braille unicode table
 usage:
-	lua lua-braile.lua <img_path> <grayscale_mode_index> <compression>
-	<img_path> - path to image in .png format
-	<compression> - parameter from 0.0 to 0.99 of image size compression
-	<grayscale_mode_index> {'luminance', 'lightness', 'average', 'value'}
+lua lua-braile.lua <img_path> <grayscale_mode_index> <compression>
+<img_path> - path to image in .png format
+<compression> - parameter from 0.0 to 0.99 of image size compression
+<grayscale_mode_index> {'luminance', 'lightness', 'average', 'value'}
 ```
 you can provide only pic in .png format as argument
 ```bash
